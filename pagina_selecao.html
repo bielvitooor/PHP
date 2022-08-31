@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            text-align: center;
+            position: center;
+            background-position: absolute;
+            background-image: url(https://images.hdqwalls.com/wallpapers/firewatch-minimalism-0u.jpg);
+            background-size: 100%;
+        }
+        
+        body h1 {
+            color: mintcream;
+            -webkit-text-stroke-width: 0.8px;
+            -webkit-text-stroke-color: #000;
+        }
+        
+        input {
+            width: 160x;
+        }
+        
+        form {
+            display: inline-block;
+            position: relative;
+            width: 270px;
+            height: 540px;
+            background-color: rgba(201, 173, 255, 0.5);
+        }
+        
+        label {
+            font-family: monospace;
+            font-size: 20px;
+            text-align: left;
+        }
+        
+        #botao {
+            color: navy;
+        }
+    </style>
+    <title>Página de Seleção</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+</head>
+
+<body>
+    <h1>Pré-Seleção de Novos Talentos</h1>
+    <form>
+        <h2>Formulário de Seleção</h2>
+        <label>Nome</label>
+        <br>
+        <input type="text" name="nome" maxlength="40" required="required">
+        <br>
+        <label>Data de Nascimento</label>
+        <br>
+        <input type="date" name="data" required="required" min="1970-01-01" max="2010-12-31">
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" name="email" required="required" id="email">
+        <br>
+        <label>Telefone</label>
+        <br>
+        <input type="text" name="telefone" id="telefone" required="required">
+        <br>
+        <label>CPF</label>
+        <br>
+        <input type="text" name="cpf" id="cpf" required="required">
+        <br>
+        <label>Pretenção Salarial(R$)</label>
+        <br>
+        <input type="text" name="salario" id="salario" required="required">
+        <br>
+        <label> Horario de almoço</label>
+        <br>
+        <input type="time" name="hora" required="required">
+        <h3>Clique no botão abaixo para enviar o formulário</h3>
+        <input type="submit" id="botao">
+
+    </form>
+</body>
+<script>
+    $("#telefone").mask("(99)99999-9999");
+    $("#cpf").mask("999.999.999-99");
+    $("#salario").mask("#.##0,00", {
+        reverse: true
+    })
+</script>
+<script>
+    /*Aqui é o bagulho lá do numero no email( foi uma seculo pra arrumar)*/
+    const inputemail = document.querySelector("#email");
+    inputemail.addEventListener("keypress", function(e) {
+        const keycode = (e.keyCode ? e.keyCode : e.wich)
+        if (keycode > 47 && keycode < 58) {
+            e.preventDefault();
+        }
+    })
+</script>
+
+</html>
