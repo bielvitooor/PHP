@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Aula9</title>
+    <script>
+     var n1 = prompt("Digite um valor");
+     var n2 =  prompt("Digite outro valor ");
+       var n1int = parseInt(n1);
+       var n2int = parseInt(n2);
+       function soma(n1int,n2int){
+           var resultado= (n1int+n2int);
+           document.write("o resultado da soma é "+ resultado);
+       }
+       function subtrair(n1int, n2int){
+           var resultado = n1int -n2int;
+           document.write ("O resultado da subtração é "+ resultado);
+        
+       }
+       function multiplicar(n1int, n2int){
+       var resultado = n1int*n2int;
+       document.write("O resultado da multiplicação é "+resultado)
+       }
+       function dividir(n1int, n2int){
+           var resultado = n1int/n2int;
+           document.write("O resultado da divisão é " + resultado)
+       }
+    </script>
+</head>
+<body>
+    <h1>Escolha o que fazer com os valore sobtidos</h1>
+    <button onclick="soma(n1int,n2int)">somar</button>
+    <button onclick="subtrair(n1int, n2int)">subtrair</button>
+    <button onclick="multiplicar(n1int, n2int)">multiplicação</button>
+    <button onclick="dividir(n1int,n2int)">Divisão</button>
+</body>
+</html>
